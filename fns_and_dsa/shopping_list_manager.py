@@ -1,5 +1,3 @@
-# shopping_list_manager.py
-
 def display_menu():
     print("\nShopping List Manager")
     print("1. Add Item")
@@ -25,9 +23,12 @@ def main():
             else:
                 print(f"'{item}' not found in the list.")
         elif choice == '3':
-            print("\nCurrent Shopping List:")
-            for i, item in enumerate(shopping_list, start=1):
-                print(f"{i}. {item}")
+            if shopping_list:
+                print("\nCurrent Shopping List:")
+                for i, item in enumerate(shopping_list, start=1):
+                    print(f"{i}. {item}")
+            else:
+                print("Your shopping list is empty.")
         elif choice == '4':
             print("Goodbye!")
             break
